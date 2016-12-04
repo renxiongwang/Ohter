@@ -1,0 +1,21 @@
+//what is socekt in Linux?
+//what is TCP socket?
+//How does it work?
+//
+// please create a TCP server listening at myhost="123.121.10.10" and port=2020
+// please also create a TCP client sending "Nice to meet you" to the server above
+// 
+
+//what is UDP socket?
+//How does it work?
+//
+//please create a Multicast server at myhost="221.121.10.10" and port=24000
+// please also create a receiver listening to the multicast server above 
+// show the Multicast server casts a message "Welcome to my group" 
+// Show how the receiver read the message
+//
+//what is the main difference between TCP and UDP sockets?
+//
+//what is kernel bypass?
+//show one example of kernel bypass in socket operation.
+

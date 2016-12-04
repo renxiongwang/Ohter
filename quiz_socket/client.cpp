@@ -1,0 +1,39 @@
+#include <stdio.h>
+#include <sys/socket.h>
+#include <sys/types.h>
+#include <stdlib.h>
+#include <netinet/in.h>
+#include <errno.h>
+#include <string.h>
+#include <arpa/inet.h>
+#include <unistd.h>
+
+int main() {
+
+  int socketfd;
+  struct sockaddr_in sockaddr;
+  char sendline[] = "How are you";
+  int n;
+
+  // make a socket
+  socketfd = socket(AF_INET,SOCK_STREAM, 0);
+  memset(&sockaddr, 0, sizeof(sockaddr));
+  sockaddr.sin_family = AF_INET;
+  sockaddr.sin_port = htons(2020);
+  inet_pton(AF_INET, "123.121.10.10", &sockaddr.sin_addr);
+
+  // connect
+  if((connect(socketfd, (struct sockaddr*)& sockaddr, sizeof(sockaddr))) < 0 ) {
+    printf("Connect error");
+    return 0;
+  }
+  
+  // send
+  if((send(socketfd, sendline, strlen(sendline), 0)) < 0) {
+    printf("Message error");
+    return 0;
+  }
+ 
+  close(socketfd);
+  return 0;
+}

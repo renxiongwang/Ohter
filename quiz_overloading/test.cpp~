@@ -1,0 +1,11 @@
+#include<iostream>
+#include<myMatrix.h>
+using namespace std;
+
+int main() {
+  myMatrix A(3, 3, 1);
+  myMatrix B(3, 3, 2);
+  myMatrix C = A + B;
+  C.print();
+  return 1;
+}

@@ -1,0 +1,15 @@
+#incldue "Application.h"
+#include <ext/hash_map>
+#include <string>
+#include "Handler.h"
+
+//TO_DO *************
+//create a class ASX_ITCH_Handler, which is a protected inheritant of Handler
+//ASX_ITCH uses Nanoseconds portion of the timestamp as seqno
+// http://www.asx.com.au/documents/products/asx_market_data_protocol_specification_v1.0.pdf
+  
+class ASX_ITCH_Handler:protected Handler
+{
+public:
+  size_t parse(const string&& , size_t len)=0;
+};

@@ -1,0 +1,23 @@
+#ifndef DATE_H
+#define DATE_H
+
+#include<iostream>
+using namespace std;
+
+class myMatrix {
+private:
+  double* values;
+  int m;
+  int n;
+public:
+  myMatrix(int m, int n, double value);
+  myMatrix operator +(myMatrix &A);
+  myMatrix operator *(myMatrix &A);
+  double get(int i, int j);
+  void set(int i, int j, double value);
+  int getm();
+  int getn();
+  void print();
+};
+
+#endif

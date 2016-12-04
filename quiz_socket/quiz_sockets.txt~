@@ -1,0 +1,23 @@
+//what is socekt in Linux?
+A socket is just a logical endpoint for communication. They exist on the transport layer. You can send and receive things on a socket, you can bind and listen to a socket. A socket is specific to a protocol, machine, and port, and is addressed as such in the header of a packet.
+//what is TCP socket?
+A TCP socket is an endpoint instance defined by an IP address and a port in the context of either a particular TCP connection or the listening state. A port is a virtualisation identifier defining a service endpoint (as distinct from a service instance endpoint aka session identifier).
+//How does it work?
+//
+// please create a TCP server listening at myhost="123.121.10.10" and port=2020
+// please also create a TCP client sending "Nice to meet you" to the server above
+// 
+
+//what is UDP socket?
+//How does it work?
+//
+//please create a Multicast server at myhost="221.121.10.10" and port=24000
+// please also create a receiver listening to the multicast server above 
+// show the Multicast server casts a message "Welcome to my group" 
+// Show how the receiver read the message
+//
+//what is the main difference between TCP and UDP sockets?
+//
+//what is kernel bypass?
+//show one example of kernel bypass in socket operation.
+

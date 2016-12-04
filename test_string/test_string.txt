@@ -1,0 +1,8 @@
+//use the most ****efficient**** algorithm to
+//find the longest common substring between 2 strings
+//
+#include <string>
+string longestCommonSubstring(string* string1, string* string2)
+{
+
+} 

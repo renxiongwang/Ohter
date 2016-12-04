@@ -1,0 +1,6 @@
+//overloading operators
+in myMatrix.h and myMatrix.cpp,
+create a concrete (m x n ) matrix  class with real number as elements and with 
+overloading member functions for operators + and *  and 
+non-member overloading function for operator - ;
+

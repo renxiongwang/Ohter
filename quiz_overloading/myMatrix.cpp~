@@ -1,0 +1,62 @@
+#include<myMatrix.h>
+
+// myMatrix constructor
+myMatrix::myMatrix(int m, int n, int value) {
+  values = vector(m * n, value);
+}
+
+// myMatrix get: return value for row i, col j
+myMatrix::get(int i , int j) {
+  assert (i <= n  && i >= 1 && j <= m && j >= 1);
+  return values[(i - 1) * n + j - 1];
+}
+
+// myMatrix set: set value for row i, col j
+void myMatrix::set(int i, int j, int value) {
+  values[(i - 1) * n + j - 1] = value;
+}
+
+// myMatrix getm: return number of rows
+int myMatrix::getm() {
+  return m;
+}
+
+// myMatrix getn: return number of cols
+int myMatrix::getn() {
+  return n;
+}
+
+// operator +
+matrix myMatrix::operator +(matrix &A) {
+  assert(m == A.getm() && n == A.getn());
+  matrix res(m, n, 0);
+  for (int i = 1; i <= m; ++i) {
+    for (int j = 1; j <= n; ++j) {
+      res.set(i, j, A.get(i, j) + values[(i - 1) * n + j - 1]);
+    }
+  }
+  return res;	      
+}
+
+//operator *
+matrix matrix::operator *(matrix &A) {
+  assert(m == A.getn() && n == A.getm());
+  matrix res(m, m, 0);
+  for (int i = 1; i <= m; ++i) {
+    for (int j = 1; j <= n; ++j) {
+      res.set(i, j, 0);
+    }
+  }
+    return res;
+}
+
+// print myMatrix
+void myMatrix::print() {
+  for (int i = 1; i <= m; ++i) {
+    for (int j = 1; j <= n; ++j) {
+      cout << values[(i - 1) * n + j - 1] << " ";
+    }
+    cout << endl;
+  }
+}
+

@@ -1,0 +1,47 @@
+#include <string>
+#include <iostream>
+using namespace std;
+
+string longestCommonSubstring(string* string1, string* string2)
+{
+  int l1 = string1->length();
+  int l2 = string2->length();
+  int dp[l1 + 1][l2 + 1];
+  for (int i = 1; i < l1; i++) 
+  {
+    for (int j = 1; j < l2; j++)
+    {
+      if (string1[i - 1] == string2[j - 1]) 
+      {
+	dp[i][j] = dp[i - 1][j - 1] + 1;
+      }
+      else 
+      {
+	dp[i][j] = 0;
+      }
+    }     
+  }
+  int start = 0;
+  int max = 0;
+  for (int i = 1; i <= l1; i++)
+  {
+    for (int j = 1; j <= l2; j++)
+    {
+      if (f[i][j] > max)
+      {
+	max = f[i][j];
+	start = i - max;
+      }
+    }
+  }
+  return string1->substr(start, max);
+}
+
+int main() {
+  string s1 = "abcdefag";
+  string s2 = "bcdaga";
+  string* a = s1;
+  string* b = s2;
+  cout << longestCommonSubstring(a, b);
+  return 0;
+}
